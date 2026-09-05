@@ -1,0 +1,150 @@
+/* ==========================================================================
+   TYPOGRAPHY SYSTEM & EDITORIAL STYLES
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Instrument+Serif:ital@0;1&family=Montserrat:wght@700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+/* --- DISPLAY HEADINGS --- */
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.02;
+}
+
+.font-editorial-sans {
+  font-family: var(--font-editorial-sans);
+  letter-spacing: -0.03em;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Heading Sizes */
+.title-hero {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2xl);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.title-chapter {
+  font-family: var(--font-display);
+  font-size: var(--text-display-xl);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.title-section {
+  font-family: var(--font-editorial-sans);
+  font-size: var(--text-display-md);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.title-sub {
+  font-family: var(--font-display);
+  font-size: var(--text-display-sm);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.25;
+}
+
+/* Editorial Manifesto Quote */
+.editorial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 4rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--text-current);
+}
+
+.editorial-quote em,
+.font-italic {
+  font-style: italic;
+  font-family: var(--font-display);
+}
+
+/* Body Text Styles */
+.lead-paragraph {
+  font-size: var(--text-body-xl);
+  line-height: 1.55;
+  font-weight: 400;
+  color: var(--text-current);
+  max-width: 42ch;
+}
+
+.body-regular {
+  font-size: var(--text-body-md);
+  line-height: 1.7;
+  color: var(--text-muted-current);
+}
+
+/* Film & Editorial Microcopy Indicators */
+.meta-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted-current);
+  border: 1px solid var(--border-current);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-subtle);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.meta-tag .indicator-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--accent-current);
+  display: inline-block;
+}
+
+.chapter-number-badge {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  font-weight: 500;
+  color: var(--accent-current);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+/* Handwritten / Sarcastic Micro Notes */
+.handwritten-note {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.2;
+  color: var(--color-burgundy);
+  display: inline-block;
+  transform: rotate(-1.5deg);
+  opacity: 0.9;
+}
+
+[data-chapter-theme="00"] .handwritten-note,
+[data-chapter-theme="06"] .handwritten-note {
+  color: var(--color-butter-dark);
+}
+
+.sarcastic-caption {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted-current);
+  opacity: 0.85;
+}

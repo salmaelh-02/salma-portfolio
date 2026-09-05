@@ -1,0 +1,266 @@
+/* ==========================================================================
+   CHAPTER 00 — OPENING SEQUENCE
+   ========================================================================== */
+
+.chapter-opening {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  background-color: var(--color-ink);
+  color: #FAF8F5;
+  border-bottom: 1px solid rgba(250, 248, 245, 0.12);
+}
+
+/* Background Cinematic Visual / Reel Container */
+.opening-visual-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  transition: transform var(--duration-cinematic) var(--ease-cinematic);
+}
+
+/* Cinematic Letterbox Aspect Ratios (Standard 16:9 or CinemaScope 2.39:1) */
+.opening-visual-frame.aspect-scope {
+  top: 6vh;
+  bottom: 6vh;
+  height: 88vh;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.opening-media-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.68) contrast(1.08) saturate(1.1);
+  transform: scale(1.03);
+  transition: transform 8s ease-out;
+}
+
+.chapter-opening:hover .opening-media-element {
+  transform: scale(1.07);
+}
+
+/* Dark Gradient Vignette for Editorial Depth */
+.opening-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(17, 15, 14, 0.15) 0%, rgba(17, 15, 14, 0.78) 100%),
+              linear-gradient(to bottom, rgba(17, 15, 14, 0.55) 0%, transparent 30%, rgba(17, 15, 14, 0.85) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Film Production Metadata Overlays */
+.opening-hud-meta {
+  position: relative;
+  z-index: 5;
+  padding-top: clamp(5.25rem, 8.5vh, 6.75rem);
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.1em;
+  color: rgba(250, 248, 245, 0.75);
+  pointer-events: none;
+}
+
+.opening-hud-meta * {
+  pointer-events: auto;
+}
+
+.opening-hud-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.opening-timecode {
+  font-variant-numeric: tabular-nums;
+  color: #D4C392;
+  font-weight: 600;
+}
+
+.opening-hud-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+/* Letterbox Aspect Switcher & Downloadable CV Button */
+.aspect-toggle-btn,
+.opening-cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-subtle);
+  background: rgba(0, 0, 0, 0.35);
+  color: #FAF8F5;
+  text-decoration: none;
+  transition: all var(--duration-fast) ease;
+}
+
+.aspect-toggle-btn:hover,
+.opening-cv-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #FAF8F5;
+  color: #FAF8F5;
+}
+
+/* Main Cinematic Title Center Content */
+.opening-main-content {
+  position: relative;
+  z-index: 5;
+  padding: 0 var(--container-pad);
+  max-width: var(--container-max);
+  margin: auto auto;
+  width: 100%;
+}
+
+.opening-chapter-tag {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  color: #D4C392;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: revealUp 0.8s var(--ease-cinematic) 0.2s forwards;
+}
+
+.opening-title {
+  font-family: var(--font-display);
+  font-size: var(--text-display-2xl);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: #FAF8F5;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateY(25px);
+  animation: revealUp 1s var(--ease-cinematic) 0.4s forwards;
+}
+
+.opening-title .title-italic {
+  font-style: italic;
+  font-family: 'Instrument Serif', Georgia, serif;
+}
+
+.opening-disciplines {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 2.5rem);
+  font-family: var(--font-editorial-sans);
+  font-size: clamp(0.95rem, 1.8vw, 1.45rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #FAF8F5;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: revealUp 0.9s var(--ease-cinematic) 0.7s forwards;
+}
+
+.opening-discipline-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.opening-discipline-separator {
+  color: #D4C392;
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+/* Playful Micro-caption */
+.opening-sarcastic-note {
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: rgba(250, 248, 245, 0.55);
+  letter-spacing: 0.08em;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: revealUp 0.8s var(--ease-cinematic) 1s forwards;
+}
+
+.opening-sarcastic-note span.highlight {
+  color: #F8D8DC;
+  font-style: italic;
+}
+
+/* Bottom Bar / Reel Prompt */
+.opening-bottom-bar {
+  position: relative;
+  z-index: 5;
+  padding: clamp(1.5rem, 3vh, 2.5rem) var(--container-pad);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 1px solid rgba(250, 248, 245, 0.1);
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.12em;
+  color: rgba(250, 248, 245, 0.7);
+}
+
+.opening-scroll-prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #FAF8F5;
+  text-decoration: none;
+  transition: transform var(--duration-fast) var(--ease-smooth), color var(--duration-fast) ease;
+}
+
+.opening-scroll-prompt:hover {
+  color: #D4C392;
+  transform: translateY(3px);
+}
+
+.opening-scroll-arrow {
+  display: inline-block;
+  animation: bounceDown 2s infinite ease-in-out;
+}
+
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+@keyframes revealUp {
+  0% {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

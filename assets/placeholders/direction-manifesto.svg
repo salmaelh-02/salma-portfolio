@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1250" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sageGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C5D1C3"/>
+      <stop offset="60%" stop-color="#8A9A86"/>
+      <stop offset="100%" stop-color="#4F5E4D"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="1250" fill="#E8ECE7"/>
+  <rect width="920" height="1170" x="40" y="40" fill="url(#sageGrad)" rx="2"/>
+  
+  <!-- Architectural Silhouette & Daylight Window Simulation -->
+  <path d="M150,150 L600,150 L850,1100 L150,1100 Z" fill="#FDFBF3" opacity="0.25"/>
+  <circle cx="680" cy="420" r="180" fill="#E8ECE7" opacity="0.35"/>
+  
+  <text x="80" y="120" fill="#1A2319" font-family="'Space Grotesk', monospace" font-size="18" letter-spacing="3" opacity="0.7">AUC FILM ARCHIVE // STUDY 01</text>
+  <text x="80" y="1060" fill="#1A2319" font-family="'Instrument Serif', serif" font-style="italic" font-size="44">Atmosphere, Human Behavior &amp; Light</text>
+  <text x="80" y="1120" fill="#1A2319" font-family="'Space Grotesk', monospace" font-size="16" letter-spacing="2" opacity="0.6">CAIRO 30.0444° N</text>
+
+  <!-- Replace Note -->
+  <rect x="250" y="580" width="500" height="70" rx="3" fill="rgba(26, 35, 25, 0.85)"/>
+  <text x="500" y="622" fill="#FAF8F5" font-family="'Space Grotesk', monospace" font-size="15" letter-spacing="1.5" text-anchor="middle">
+    [ PLACEHOLDER: DIRECTION MOOD STILL ]
+  </text>
+</svg>

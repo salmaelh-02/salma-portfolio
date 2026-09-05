@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 1280" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bts2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FDFBF3"/>
+      <stop offset="50%" stop-color="#E2D4B7"/>
+      <stop offset="100%" stop-color="#4A121A"/>
+    </linearGradient>
+  </defs>
+  <rect width="720" height="1280" fill="url(#bts2)"/>
+  
+  <text x="50" y="80" fill="#4A121A" font-family="'Space Grotesk', monospace" font-size="16" letter-spacing="3">TAKE 08 // PROP HUNT</text>
+  <text x="50" y="1180" fill="#FAF8F5" font-family="'Instrument Serif', serif" font-style="italic" font-size="36">Vintage 1970s Cup Obsession</text>
+
+  <rect x="110" y="580" width="500" height="70" rx="3" fill="rgba(74, 18, 26, 0.85)"/>
+  <text x="360" y="622" fill="#FAF8F5" font-family="'Space Grotesk', monospace" font-size="15" letter-spacing="1.5" text-anchor="middle">
+    [ /assets/bts/bts-clip-02.mp4 ]
+  </text>
+</svg>

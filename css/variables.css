@@ -1,0 +1,135 @@
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM VARIABLES
+   Salma El Hadidy — Creative Director Portfolio
+   ========================================================================== */
+
+:root {
+  /* --- PALETTE SYSTEM: Primary & Accent Colors --- */
+  --color-sage: #8A9A86;
+  --color-sage-light: #E8ECE7;
+  --color-sage-dark: #3F4D3C;
+
+  --color-butter: #F6EDD0;
+  --color-butter-light: #FDFBF3;
+  --color-butter-dark: #D4C392;
+
+  --color-pink: #F8D8DC;
+  --color-pink-light: #FDF4F5;
+  --color-pink-dark: #A85864;
+
+  --color-offwhite: #FAF8F5;
+  --color-cream: #F4EFE6;
+  --color-paper: #EFE9DE;
+
+  --color-emerald: #143528;
+  --color-emerald-deep: #0D231A;
+
+  --color-burgundy: #4A121A;
+  --color-burgundy-deep: #25090E;
+
+  --color-charcoal: #1C1917;
+  --color-ink: #110F0E;
+  --color-ash: #66605B;
+  --color-mute: #8E8881;
+  --color-border: rgba(28, 25, 23, 0.12);
+  --color-border-light: rgba(28, 25, 23, 0.06);
+
+  /* --- DYNAMIC CHAPTER THEME VARIABLES (Defaults to 00 - Opening) --- */
+  --bg-current: #141110;
+  --text-current: #FDFBF3;
+  --text-muted-current: rgba(253, 251, 243, 0.65);
+  --accent-current: #D4C392;
+  --border-current: rgba(253, 251, 243, 0.15);
+
+  /* --- TYPOGRAPHY FAMILIES --- */
+  --font-display: 'Instrument Serif', 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-editorial-sans: 'Syne', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Grotesk', 'SF Mono', Monaco, Inconsolata, 'Courier New', monospace;
+
+  /* --- TYPOGRAPHY SCALE --- */
+  --text-display-2xl: clamp(3.5rem, 9vw, 8.5rem);
+  --text-display-xl: clamp(2.75rem, 6.5vw, 6rem);
+  --text-display-lg: clamp(2.25rem, 4.5vw, 4.25rem);
+  --text-display-md: clamp(1.75rem, 3.2vw, 3rem);
+  --text-display-sm: clamp(1.35rem, 2.2vw, 2.1rem);
+
+  --text-body-xl: clamp(1.2rem, 1.8vw, 1.55rem);
+  --text-body-lg: clamp(1.05rem, 1.3vw, 1.25rem);
+  --text-body-md: 1rem;
+  --text-body-sm: 0.875rem;
+  --text-micro: 0.75rem;
+
+  /* --- SPACING & CONTAINER SYSTEM --- */
+  --container-max: 1560px;
+  --container-pad: clamp(1.5rem, 5.5vw, 6.5rem);
+  --section-gap: clamp(5rem, 12vh, 11rem);
+  --radius-subtle: 2px;
+  --radius-md: 6px;
+
+  /* --- MOTION & EASING --- */
+  --ease-cinematic: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 240ms;
+  --duration-normal: 480ms;
+  --duration-slow: 850ms;
+  --duration-cinematic: 1200ms;
+
+  /* --- Z-INDEX LAYERING --- */
+  --z-background: 0;
+  --z-content: 10;
+  --z-film-grain: 50;
+  --z-hud: 100;
+  --z-modal: 1000;
+  --z-cursor: 2000;
+}
+
+/* Chapter Specific Dynamic Overrides when scrolled into view */
+[data-chapter-theme="00"] {
+  --bg-current: #141110;
+  --text-current: #FAF8F5;
+  --text-muted-current: rgba(250, 248, 245, 0.65);
+  --accent-current: #EFE9DE;
+  --border-current: rgba(250, 248, 245, 0.15);
+}
+
+[data-chapter-theme="01"] {
+  --bg-current: #F4EFE6;
+  --text-current: #1F251E;
+  --text-muted-current: #596557;
+  --accent-current: #143528;
+  --border-current: rgba(31, 37, 30, 0.15);
+}
+
+[data-chapter-theme="02"] {
+  --bg-current: #F7F1DE;
+  --text-current: #143528;
+  --text-muted-current: #375647;
+  --accent-current: #0D231A;
+  --border-current: rgba(20, 53, 40, 0.16);
+}
+
+[data-chapter-theme="03"] {
+  --bg-current: #FAF8F5;
+  --text-current: #1C1917;
+  --text-muted-current: #66605B;
+  --accent-current: #4A121A;
+  --border-current: rgba(28, 25, 23, 0.14);
+}
+
+[data-chapter-theme="04"] {
+  --bg-current: #E8ECE7;
+  --text-current: #1A2319;
+  --text-muted-current: #4F5E4D;
+  --accent-current: #2C3E2A;
+  --border-current: rgba(26, 35, 25, 0.16);
+}
+
+[data-chapter-theme="05"] {
+  --bg-current: #161213;
+  --text-current: #FAF8F5;
+  --text-muted-current: rgba(250, 248, 245, 0.65);
+  --accent-current: #F6EDD0;
+  --border-current: rgba(250, 248, 245, 0.15);
+}

@@ -1,0 +1,169 @@
+/* ==========================================================================
+   COMPONENT: LIGHTBOX & MEDIA INSPECTOR MODAL
+   ========================================================================== */
+
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(14, 12, 11, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  z-index: var(--z-modal);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition: opacity var(--duration-normal) var(--ease-cinematic),
+              visibility var(--duration-normal) var(--ease-cinematic);
+}
+
+.lightbox-modal.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+/* Lightbox Header Bar */
+.lightbox-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  color: #FAF8F5;
+  font-family: var(--font-mono);
+  font-size: var(--text-micro);
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid rgba(250, 248, 245, 0.15);
+  padding-bottom: 1rem;
+}
+
+.lightbox-close-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(250, 248, 245, 0.25);
+  border-radius: var(--radius-subtle);
+  color: #FAF8F5;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  transition: all var(--duration-fast) ease;
+}
+
+.lightbox-close-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #FAF8F5;
+}
+
+/* Lightbox Stage Center */
+.lightbox-stage {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0;
+  max-height: 75vh;
+}
+
+.lightbox-media-container {
+  position: relative;
+  max-width: 90vw;
+  max-height: 72vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-image,
+.lightbox-video {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-subtle);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+  transform: scale(0.96);
+  transition: transform var(--duration-normal) var(--ease-cinematic);
+  outline: none;
+}
+
+.lightbox-modal.is-active .lightbox-image,
+.lightbox-modal.is-active .lightbox-video {
+  transform: scale(1);
+}
+
+/* Lightbox Prev / Next Nav Controls */
+.lightbox-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FAF8F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--duration-fast) ease;
+  z-index: 10;
+}
+
+.lightbox-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-prev-btn { left: 1rem; }
+.lightbox-next-btn { right: 1rem; }
+
+/* Lightbox Footer Caption & Meta */
+.lightbox-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  border-top: 1px solid rgba(250, 248, 245, 0.15);
+  padding-top: 1rem;
+  color: #FAF8F5;
+}
+
+.lightbox-caption {
+  font-family: 'Instrument Serif', Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  color: #F6EDD0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.lightbox-frame-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-style: normal;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #FAF8F5;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-subtle);
+}
+
+.lightbox-counter {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  color: #8E8881;
+}

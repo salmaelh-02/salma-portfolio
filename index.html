@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en" data-chapter-theme="00">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#143528">
+  <meta name="description" content="Salma El Hadidy — Creative Director. Cinematic, editorial, and lifestyle campaign direction for fashion, culture, and visual brands.">
+  <meta name="author" content="Salma El Hadidy">
+  <title>Salma El Hadidy — Creative Director</title>
+
+  <!-- Open Graph / Social Media Meta -->
+  <meta property="og:title" content="Salma El Hadidy — Creative Director">
+  <meta property="og:description" content="Cinematic, editorial, and lifestyle campaign direction for fashion, culture, and visual brands.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/about/salma-portrait.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Salma El Hadidy — Creative Director">
+  <meta name="twitter:description" content="Cinematic, editorial, and lifestyle campaign direction for fashion, culture, and visual brands.">
+  <meta name="twitter:image" content="assets/about/salma-portrait.jpg">
+
+  <!-- Favicon / Brand Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/chapters/00-opening.css">
+  <link rel="stylesheet" href="css/chapters/01-direction.css">
+  <link rel="stylesheet" href="css/chapters/02-work-joes.css">
+  <link rel="stylesheet" href="css/chapters/03-camera-roll.css">
+  <link rel="stylesheet" href="css/chapters/04-bts.css">
+  <link rel="stylesheet" href="css/chapters/05-about.css">
+  <link rel="stylesheet" href="css/chapters/06-credits.css">
+  <link rel="stylesheet" href="css/components/lightbox.css">
+  <link rel="stylesheet" href="css/components/audio-player.css">
+  <link rel="stylesheet" href="css/components/microcopy.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- Procedural 35mm Film Grain Canvas Layer -->
+  <canvas id="filmGrainCanvas" class="film-grain-canvas" aria-hidden="true"></canvas>
+
+  <!-- ========================================================================
+       SITE HEADER / FLOATING DIRECTOR'S HUD
+       ======================================================================== -->
+  <header class="site-header" role="banner">
+    <!-- Brand / Signature -->
+    <a href="#opening" class="header-brand" aria-label="Salma El Hadidy Home">
+      <span class="header-brand-name">Salma El Hadidy</span>
+      <span class="header-brand-role">Creative Director</span>
+    </a>
+
+    <!-- Active Chapter Floating Ticker -->
+    <div class="chapter-hud-ticker" aria-live="polite">
+      <span class="chapter-hud-dot" aria-hidden="true"></span>
+      <span id="chapterHudText">00 — OPENING // THE REEL</span>
+    </div>
+
+    <!-- Actions: Sound & Chapter Menu -->
+    <div class="header-actions">
+      <!-- Ambient Audio Controller (Strictly No Autoplay - Click to Listen) -->
+      <button id="globalAudioToggle" class="audio-toggle-btn" aria-label="Toggle 35mm projector ambient sound">
+        <span class="audio-wave-bars" aria-hidden="true">
+          <span class="audio-wave-bar"></span>
+          <span class="audio-wave-bar"></span>
+          <span class="audio-wave-bar"></span>
+        </span>
+        <span class="audio-toggle-text">SOUND: OFF</span>
+      </button>
+
+      <!-- Treatment Navigation Drawer Toggle -->
+      <button id="menuToggleBtn" class="menu-toggle-btn" aria-label="Open Chapter Treatment Menu">
+        <span>CHAPTERS</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       DESKTOP CHAPTER RAIL (FIXED LEFT SIDE INDICATOR)
+       ======================================================================== -->
+  <nav class="chapter-rail" aria-label="Chapter Sequence">
+    <a href="#opening" class="chapter-rail-item is-active" data-chapter-target="00">
+      <span class="chapter-rail-dot"></span>
+      <span class="chapter-rail-label">00 — Opening</span>
+    </a>
+    <a href="#about" class="chapter-rail-item" data-chapter-target="01">
+      <span class="chapter-rail-dot"></span>
+      <span class="chapter-rail-label">01 — About Salma</span>
+    </a>
+    <a href="#work" class="chapter-rail-item" data-chapter-target="02">
+      <span class="chapter-rail-dot"></span>
+      <span class="chapter-rail-label">02 — Selected Work</span>
+    </a>
+    <a href="#camera-roll" class="chapter-rail-item" data-chapter-target="03">
+      <span class="chapter-rail-dot"></span>
+      <span class="chapter-rail-label">03 — Camera Roll</span>
+    </a>
+    <a href="#direction" class="chapter-rail-item" data-chapter-target="04">
+      <span class="chapter-rail-dot"></span>
+      <span class="chapter-rail-label">04 — Direction</span>
+    </a>
+    <a href="#credits" class="chapter-rail-item" data-chapter-target="05">
+      <span class="chapter-rail-dot"></span>
+      <span class="chapter-rail-label">05 — Get In Touch</span>
+    </a>
+  </nav>
+
+  <!-- ========================================================================
+       FULLSCREEN TREATMENT NAVIGATION MODAL
+       ======================================================================== -->
+  <div id="treatmentNavModal" class="treatment-nav-modal" role="dialog" aria-modal="true" aria-label="Treatment Menu">
+    <div class="treatment-nav-top">
+      <span class="treatment-nav-title">DIRECTOR'S TREATMENT // SEQUENCE INDEX</span>
+      <button id="treatmentNavCloseBtn" class="treatment-nav-close-btn" aria-label="Close Menu">[ ESC // CLOSE ]</button>
+    </div>
+
+    <div class="treatment-nav-chapters">
+      <a href="#opening" class="treatment-chapter-link">
+        <span class="treatment-chapter-num">00</span>
+        <span class="treatment-chapter-name">OPENING REEL</span>
+        <span class="treatment-chapter-desc">Cinematic sequence &amp; initial titles</span>
+      </a>
+      <a href="#about" class="treatment-chapter-link">
+        <span class="treatment-chapter-num">01</span>
+        <span class="treatment-chapter-name">ABOUT SALMA</span>
+        <span class="treatment-chapter-desc">Profile, trilingual fluency &amp; CV</span>
+      </a>
+      <a href="#work" class="treatment-chapter-link">
+        <span class="treatment-chapter-num">02</span>
+        <span class="treatment-chapter-name">SELECTED WORK</span>
+        <span class="treatment-chapter-desc">Joe's Venture campaign ecosystem</span>
+      </a>
+      <a href="#camera-roll" class="treatment-chapter-link">
+        <span class="treatment-chapter-num">03</span>
+        <span class="treatment-chapter-name">CAMERA ROLL</span>
+        <span class="treatment-chapter-desc">Personal observational visual archive</span>
+      </a>
+      <a href="#direction" class="treatment-chapter-link">
+        <span class="treatment-chapter-num">04</span>
+        <span class="treatment-chapter-name">DIRECTION</span>
+        <span class="treatment-chapter-desc">Creative point of view &amp; visual philosophy</span>
+      </a>
+      <a href="#credits" class="treatment-chapter-link">
+        <span class="treatment-chapter-num">05</span>
+        <span class="treatment-chapter-name">GET IN TOUCH</span>
+        <span class="treatment-chapter-desc">Contact &amp; collaboration dispatches</span>
+      </a>
+    </div>
+
+    <div class="treatment-nav-footer">
+      <span>CAIRO, EGYPT — 30.0444° N, 31.2357° E</span>
+      <span>SALMA EL HADIDY © 2026</span>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MAIN CHAPTER SEQUENCE
+       ======================================================================== -->
+  <main id="main-content">
+
+    <!-- --------------------------------------------------------------------
+         CHAPTER 00 — OPENING SEQUENCE
+         -------------------------------------------------------------------- -->
+    <section id="opening" class="chapter-section chapter-opening" data-chapter="00">
+      <!-- Background Reel / Cinematic Visual -->
+      <div class="opening-visual-frame">
+        <video src="assets/hero/hero-reel.mp4" 
+               class="opening-media-element" 
+               autoplay loop muted playsinline preload="auto"></video>
+        <div class="opening-vignette" aria-hidden="true"></div>
+      </div>
+
+      <!-- Top Production Slate Meta -->
+      <div class="opening-hud-meta">
+        <div class="opening-hud-left">
+          <span id="openingTimecode" class="opening-timecode">TC 00:00:00:00</span>
+        </div>
+        <div class="opening-hud-right">
+          <span>LOC: CAIRO, EG</span>
+          <button id="aspectRatioBtn" class="aspect-toggle-btn" aria-label="Toggle Anamorphic CinemaScope Aspect">ASPECT: 16:9</button>
+          <a href="assets/about/salma-cv.pdf" download="Salma_El_Hadidy_CV.pdf" target="_blank" rel="noopener noreferrer" class="opening-cv-btn" aria-label="Download Salma El Hadidy CV">
+            <span>DOWNLOADABLE CV</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Center Title Staggered Reveal -->
+      <div class="opening-main-content">
+        <div class="opening-chapter-tag">
+          <span class="indicator-dot"></span>
+          <span>CHAPTER 00 — THE OPENING SEQUENCE</span>
+        </div>
+        
+        <h1 class="opening-title">
+          SALMA EL HADIDY
+        </h1>
+      </div>
+
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         CHAPTER 01 — ABOUT SALMA (PROFILE & PERSPECTIVE)
+         -------------------------------------------------------------------- -->
+    <section id="about" class="chapter-section chapter-about" data-chapter="01">
+      <div class="site-container">
+        
+        <div class="about-grid">
+          
+          <!-- Left Column: Portrait Frame -->
+          <div class="about-visual-column">
+            <div class="about-portrait-frame" data-lightbox-src="assets/about/salma-portrait.jpg" data-lightbox-caption="Salma El Hadidy — Creative Director on Set, Cairo">
+              <img src="assets/about/salma-portrait.jpg" alt="Salma El Hadidy — Creative Director on Set" loading="lazy">
+            </div>
+          </div>
+
+          <!-- Right Column: Human Bio, Focus Areas, Languages, CV -->
+          <div class="about-content-column">
+            <span class="chapter-number-badge">01 — PROFILE</span>
+            
+            <h2 class="about-title">
+              I’m always looking for a <em>different way to see things.</em>
+            </h2>
+
+            <div class="about-bio-text">
+              <p>
+                I’m <strong>Salma El Hadidy</strong>, a creative director with a background in film. I’m drawn to ideas with character, emotion, and a strong visual point of view, the kind that make you stop for a second.
+              </p>
+              <p>
+                I’m especially drawn to fashion, lifestyle, and visual storytelling, where there’s room to experiment, build a world, and make something people actually want to look at.
+              </p>
+            </div>
+
+            <!-- AUC Film Foundation Card -->
+            <div class="direction-foundation-card">
+              <div class="direction-foundation-header">
+                <span class="direction-foundation-label">BA IN FILM · THE AMERICAN UNIVERSITY IN CAIRO</span>
+              </div>
+              <div class="direction-foundation-text">
+                <p>Film taught me to think in scenes, not just images. How a frame feels, where the eye goes, when something should move, and when it should stay still.</p>
+                <p>It’s the foundation behind the way I approach creative direction today, building a mood, finding the story, and making every visual choice feel intentional.</p>
+              </div>
+              <div class="direction-pillars-grid">
+                <div class="direction-pillar-item">
+                  <div class="direction-pillar-title">Directing</div>
+                  <div class="direction-pillar-desc">Creating moments, not poses.</div>
+                </div>
+                <div class="direction-pillar-item">
+                  <div class="direction-pillar-title">Storytelling</div>
+                  <div class="direction-pillar-desc">A story before a sales pitch.</div>
+                </div>
+                <div class="direction-pillar-item">
+                  <div class="direction-pillar-title">Composition</div>
+                  <div class="direction-pillar-desc">Every detail earns its place.</div>
+                </div>
+                <div class="direction-pillar-item">
+                  <div class="direction-pillar-title">Pacing</div>
+                  <div class="direction-pillar-desc">Knowing when to move, and when to hold.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Capabilities Tags -->
+            <div class="about-capabilities-box">
+              <span class="about-caps-label">CORE FOCUS &amp; CAPABILITIES</span>
+              <div class="about-caps-tags">
+                <span class="cap-tag">Creative Direction</span>
+                <span class="cap-tag">Campaign Concepts</span>
+                <span class="cap-tag">Brand Image &amp; Worlds</span>
+                <span class="cap-tag">Content &amp; Social</span>
+                <span class="cap-tag">Visual Storytelling</span>
+                <span class="cap-tag">Media-Buying Creative</span>
+              </div>
+            </div>
+
+            <!-- Language Triad -->
+            <div class="about-meta-row">
+              <div class="about-meta-block">
+                <span class="about-meta-title">LANGUAGES FLUENCY</span>
+                <div class="language-pills">
+                  <span class="lang-pill">Arabic (Native)</span>
+                  <span class="lang-pill">English (Fluent)</span>
+                  <span class="lang-pill">French (Fluent)</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         CHAPTER 02 — SELECTED WORK (JOE'S VENTURE)
+         -------------------------------------------------------------------- -->
+    <section id="work" class="chapter-section chapter-work" data-chapter="02">
+      <div class="site-container">
+        
+        <!-- Case Study Header -->
+        <div class="case-study-hero">
+          <div class="case-study-meta-header">
+            <div class="case-study-title-group">
+              <span class="case-study-badge">02 — FROM THE INSIDE</span>
+              <h2 class="case-study-client">JOE’S VENTURE</h2>
+            </div>
+            <div class="case-study-role-card">
+              <span class="case-study-role-label">ROLE / RESPONSIBILITY</span>
+              <span class="case-study-role-title">Digital Marketing Project Manager &amp; Creative Direction</span>
+            </div>
+          </div>
+          <p class="lead-paragraph">
+            Leading weekly shoots and shaping how the brand looks and feels, turning everyday products into stories, scenes, and ideas with personality.
+          </p>
+        </div>
+
+        <!-- Section 1: Creative Direction (Weekly Shoots) -->
+        <div class="work-sub-section">
+          <div class="work-sub-header">
+            <h3 class="work-sub-title">Weekly Shoot Direction &amp; Brand Execution</h3>
+          </div>
+
+          <div class="work-hero-media-wrapper" data-lightbox-src="assets/work/joes/hero.mp4" data-lightbox-caption="Joe's Venture — Weekly Editorial Shoot Direction in Cairo">
+            <video src="assets/work/joes/hero.mp4" autoplay loop muted playsinline preload="auto"></video>
+            <div class="video-play-badge" aria-hidden="true">▶</div>
+          </div>
+        </div>
+
+        <!-- Section 2: Media Buying Creative ("Sell the world around the product") -->
+        <div class="work-sub-section">
+          <div class="work-mediabuying-statement">
+            <h3 class="work-mediabuying-quote">“Sell the world <em>around the product.</em>”</h3>
+            <p class="work-mediabuying-explanation">
+              A product doesn’t need to be the whole story. Give it a setting, a character, a mood, something happening around it. I like advertising that feels like a glimpse into a world, where the product belongs naturally instead of asking for all the attention.
+            </p>
+          </div>
+
+          <div class="work-mediabuying-grid">
+            <!-- Card 01 -->
+            <div class="work-media-card span-col-3" data-lightbox-src="assets/work/joes/mb-01.jpg" data-lightbox-meta="[mb-01]">
+              <img src="assets/work/joes/mb-01.jpg" 
+                   alt="Joe's Venture Handcrafted Leather Bag & Artisan Books" 
+                   loading="lazy">
+            </div>
+
+            <!-- Card 02 -->
+            <div class="work-media-card span-col-3" data-lightbox-src="assets/work/joes/mb-02.jpg" data-lightbox-meta="[mb-02]">
+              <img src="assets/work/joes/mb-02.jpg" 
+                   alt="Joe's Venture Midnight Blue Leather Sleeve & Sculptural Folds" 
+                   loading="lazy">
+            </div>
+
+            <!-- Card 03 -->
+            <div class="work-media-card span-col-2" data-lightbox-src="assets/work/joes/mb-03.jpg" data-lightbox-meta="[mb-03]">
+              <img src="assets/work/joes/mb-03.jpg" 
+                   alt="Joe's Venture Cognac Leather Portfolio Envelope on Black Grain" 
+                   loading="lazy">
+            </div>
+
+            <!-- Card 04 -->
+            <div class="work-media-card span-col-2" data-lightbox-src="assets/work/joes/mb-04.jpg" data-lightbox-meta="[mb-04]">
+              <img src="assets/work/joes/mb-04.jpg" 
+                   alt="Joe's Venture Pebbled Leather Crossbody Bags in Sunlight" 
+                   loading="lazy">
+            </div>
+
+            <!-- Card 05 -->
+            <div class="work-media-card span-col-2" data-lightbox-src="assets/work/joes/mb-05.jpg" data-lightbox-meta="[mb-05]">
+              <img src="assets/work/joes/mb-05.jpg" 
+                   alt="Joe's Venture Caramel Leather Briefcase on Raw Workshop Rolls" 
+                   loading="lazy">
+            </div>
+
+            <!-- Card 06 (Vertical Frame) -->
+            <div class="work-media-card span-col-3" data-lightbox-src="assets/work/joes/mb-06.jpg" data-lightbox-meta="[mb-06]">
+              <img src="assets/work/joes/mb-06.jpg" 
+                   alt="Joe's Venture Shadowed Leather Briefcase on Warm Distressed Leather Rolls" 
+                   loading="lazy">
+            </div>
+
+            <!-- Card 07 (Vertical Frame) -->
+            <div class="work-media-card span-col-3" data-lightbox-src="assets/work/joes/mb-07.jpg" data-lightbox-meta="[mb-07]">
+              <img src="assets/work/joes/mb-07.jpg" 
+                   alt="Joe's Venture Cognac Leather Wristlet on Branded Packaging Boxes" 
+                   loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 3: Social & Content (Asymmetrical Layout) -->
+        <div class="work-sub-section">
+          <div class="work-sub-header">
+            <h3 class="work-sub-title">A brand in motion</h3>
+          </div>
+
+          <div class="work-social-grid">
+            <div class="work-social-card" data-lightbox-src="assets/work/joes/social-01.mp4" data-lightbox-meta="[social 01]">
+              <video src="assets/work/joes/social-01.mp4" autoplay loop muted playsinline></video>
+              <div class="video-play-badge" aria-hidden="true">▶</div>
+            </div>
+
+            <div class="work-social-card offset-card" data-lightbox-src="assets/work/joes/social-02.mp4" data-lightbox-meta="[social 02]">
+              <video src="assets/work/joes/social-02.mp4" autoplay loop muted playsinline></video>
+              <div class="video-play-badge" aria-hidden="true">▶</div>
+            </div>
+
+            <div class="work-social-card" data-lightbox-src="assets/work/joes/social-03.mp4" data-lightbox-meta="[social 03]">
+              <video src="assets/work/joes/social-03.mp4" autoplay loop muted playsinline></video>
+              <div class="video-play-badge" aria-hidden="true">▶</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section 4: Behind the Scenes (Spontaneous Moments & Interactive Sound) -->
+        <div class="work-bts-box">
+          <div class="work-bts-info">
+            <span class="meta-tag">02.3 // BEHIND THE SCENES</span>
+            <h4 class="work-bts-title">Quiet focus, <em>caught in motion.</em></h4>
+            <p class="work-bts-copy">
+              No posing, no performance, just people absorbed in what they’re doing.
+            </p>
+          </div>
+
+          <div class="work-bts-media-preview" data-lightbox-src="assets/work/joes/bts-01.mp4" data-lightbox-caption="Joe's Venture — Shoot Chaos, Set Energy &amp; Directing in Real-Time">
+            <video src="assets/work/joes/bts-01.mp4" autoplay loop muted playsinline></video>
+            <div class="video-play-badge" aria-hidden="true">▶</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         CHAPTER 03 — CAMERA ROLL (PERSONAL VISUAL ARCHIVE)
+         -------------------------------------------------------------------- -->
+    <section id="camera-roll" class="chapter-section chapter-cameraroll" data-chapter="03">
+      <div class="site-container">
+        
+        <div class="cameraroll-header">
+          <div class="cameraroll-header-top">
+            <span class="chapter-number-badge">03 — PERSONAL ARCHIVE</span>
+          </div>
+
+          <h2 class="cameraroll-title">
+            SALMA’S <em>CAMERA ROLL</em>
+          </h2>
+
+          <p class="cameraroll-desc">
+            I collect the things I want to remember, people caught in moments, places I love, pets, and little details that somehow stay with me.
+          </p>
+        </div>
+
+        <!-- Art-Directed Asymmetrical Grid -->
+        <div class="cameraroll-grid">
+
+          <!-- Photo 01 -->
+          <div class="archive-item span-wide-7" data-lightbox-src="assets/camera-roll/roll-01.jpg" data-lightbox-meta="FRAME #04A">
+            <div class="archive-photo-frame aspect-landscape">
+              <img src="assets/camera-roll/roll-01.jpg" alt="Camera Roll 01" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">EGYPT</span>
+            </div>
+          </div>
+
+          <!-- Photo 02 -->
+          <div class="archive-item span-portrait-5" data-lightbox-src="assets/camera-roll/roll-02.jpg" data-lightbox-meta="FRAME #11B">
+            <div class="archive-photo-frame aspect-landscape">
+              <div class="archive-tape-tag">STUDY</div>
+              <img src="assets/camera-roll/roll-02.jpg" alt="Camera Roll 02" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">MAURITIUS</span>
+            </div>
+          </div>
+
+          <!-- Photo 03 -->
+          <div class="archive-item span-square-4" data-lightbox-src="assets/camera-roll/roll-03.jpg" data-lightbox-meta="FRAME #19A">
+            <div class="archive-photo-frame aspect-portrait">
+              <img src="assets/camera-roll/roll-03.jpg" alt="Camera Roll 03" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">MAURITIUS</span>
+            </div>
+          </div>
+
+          <!-- Photo 04 -->
+          <div class="archive-item span-tall-4" data-lightbox-src="assets/camera-roll/roll-04.jpg" data-lightbox-meta="FRAME #22C">
+            <div class="archive-photo-frame aspect-portrait">
+              <img src="assets/camera-roll/roll-04.jpg" alt="Camera Roll 04" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">MAURITIUS</span>
+            </div>
+          </div>
+
+          <!-- Photo 05 -->
+          <div class="archive-item span-square-4" data-lightbox-src="assets/camera-roll/roll-05.jpg" data-lightbox-meta="FRAME #35A">
+            <div class="archive-photo-frame aspect-landscape">
+              <img src="assets/camera-roll/roll-05.jpg" alt="Camera Roll 05" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">EGYPT</span>
+            </div>
+          </div>
+
+          <!-- Photo 06 -->
+          <div class="archive-item span-cinematic-8" data-lightbox-src="assets/camera-roll/roll-06.jpg" data-lightbox-meta="FRAME #40B">
+            <div class="archive-photo-frame aspect-landscape">
+              <img src="assets/camera-roll/roll-06.jpg" alt="Camera Roll 06" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">EGYPT</span>
+            </div>
+          </div>
+
+          <!-- Photo 07 -->
+          <div class="archive-item span-tall-4" data-lightbox-src="assets/camera-roll/roll-10.jpg" data-lightbox-meta="FRAME #48A">
+            <div class="archive-photo-frame aspect-portrait">
+              <img src="assets/camera-roll/roll-10.jpg" alt="Camera Roll 07" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">MAURITIUS</span>
+            </div>
+          </div>
+
+          <!-- Photo 08 -->
+          <div class="archive-item span-portrait-5" data-lightbox-src="assets/camera-roll/roll-07.jpg" data-lightbox-meta="FRAME #54A">
+            <div class="archive-photo-frame aspect-landscape">
+              <img src="assets/camera-roll/roll-07.jpg" alt="Camera Roll 08" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">EGYPT</span>
+            </div>
+          </div>
+
+          <!-- Photo 09 -->
+          <div class="archive-item span-wide-7" data-lightbox-src="assets/camera-roll/roll-08.jpg" data-lightbox-meta="FRAME #62A">
+            <div class="archive-photo-frame aspect-landscape">
+              <img src="assets/camera-roll/roll-08.jpg" alt="Camera Roll 09" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">MAURITIUS</span>
+            </div>
+          </div>
+
+          <!-- Photo 10 -->
+          <div class="archive-item span-portrait-5" data-lightbox-src="assets/camera-roll/roll-09.jpg" data-lightbox-meta="FRAME #70A">
+            <div class="archive-photo-frame aspect-portrait">
+              <img src="assets/camera-roll/roll-09.jpg" alt="Camera Roll 10" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">FRANCE</span>
+            </div>
+          </div>
+
+          <!-- Photo 11 -->
+          <div class="archive-item span-wide-7" data-lightbox-src="assets/camera-roll/roll-11.jpg" data-lightbox-meta="FRAME #78A">
+            <div class="archive-photo-frame aspect-landscape">
+              <img src="assets/camera-roll/roll-11.jpg" alt="Camera Roll 11" loading="lazy">
+            </div>
+            <div class="archive-caption-row">
+              <span class="archive-caption-date">EGYPT</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         CHAPTER 04 — DIRECTION (CREATIVE POINT OF VIEW)
+         -------------------------------------------------------------------- -->
+    <section id="direction" class="chapter-section chapter-direction" data-chapter="04">
+      <div class="site-container">
+        <div class="direction-inner">
+          
+          <!-- Left Column: Editorial Manifesto -->
+          <div class="direction-content">
+            <span class="direction-tagline">
+              <span class="indicator-dot"></span>
+              04 — CREATIVE POINT OF VIEW
+            </span>
+
+            <h2 class="direction-headline">
+              “I’m interested in the <em>world around</em> the product.”
+            </h2>
+
+            <div class="direction-copy-block">
+              <p>
+                I’m drawn to what happens before the frame, after it, and just outside of it.
+              </p>
+              <ul class="direction-manifesto-list">
+                <li>The person wearing the jacket.</li>
+                <li>The room they just walked into.</li>
+                <li>The music playing somewhere in the background.</li>
+                <li>The glance that lasts a second too long.</li>
+              </ul>
+              <p>
+                I approach creative direction through <strong>story, atmosphere, movement, and emotion</strong>. The product matters, but I don’t always want it to be the loudest thing in the room. Sometimes, it’s simply part of a world you want to belong to.
+              </p>
+              <p>
+                I’m more interested in creating a scene than staging a product. Something with a mood, a point of view, and enough personality to make you look twice.
+              </p>
+              <p class="direction-closing-statement">
+                Because I don’t just want to make something look desirable.<br>
+                <em>I want to make you curious enough to stay.</em>
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Visual Frame & Director Annotation -->
+          <div class="direction-visual">
+            <div class="direction-image-frame" data-lightbox-src="assets/direction/direction-manifesto.jpg" data-lightbox-caption="AUC Film Directing &amp; Set Study — Cinema Camera, Atmosphere &amp; Character World">
+              <img src="assets/direction/direction-manifesto.jpg" 
+                   alt="AUC Film Directing Set Study — Cinema Camera &amp; Hooded Character" 
+                   loading="lazy">
+            </div>
+            <div class="direction-annotation-badge">
+              <span class="handwritten-note">“If it feels like a template, burn it and start with the feeling.”</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- --------------------------------------------------------------------
+         CHAPTER 05 — CREDITS / LET'S MAKE SOMETHING
+         -------------------------------------------------------------------- -->
+    <section id="credits" class="chapter-section chapter-credits" data-chapter="05">
+      <div class="site-container">
+        
+        <div class="credits-header">
+          <span class="chapter-number-badge">05 — GET IN TOUCH</span>
+          <h2 class="credits-title">
+            LET’S MAKE <em>SOMETHING.</em>
+          </h2>
+        </div>
+
+        <!-- Film Credits Roll Layout -->
+        <div class="credits-roll-grid">
+          
+          <div class="credits-column">
+            <span class="credits-role-label">EMAIL</span>
+            <a href="mailto:salmaelhadidy10@gmail.com" class="credits-contact-link">
+              <span>salmaelhadidy10@gmail.com</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="credits-column">
+            <span class="credits-role-label">INSTAGRAM</span>
+            <a href="https://instagram.com/salmaxelh" target="_blank" rel="noopener noreferrer" class="credits-contact-link">
+              <span>@salmaxelh</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <div class="credits-column">
+            <span class="credits-role-label">CV</span>
+            <a href="assets/about/salma-cv.pdf" download="Salma_El_Hadidy_CV.pdf" target="_blank" rel="noopener noreferrer" class="credits-contact-link">
+              <span>Download CV (PDF)</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Playful Sign-off Note -->
+        <div class="credits-signoff-bar">
+          <p class="credits-signoff-text">
+            “Probably started as a random idea. Then it became the idea.”
+          </p>
+        </div>
+
+        <!-- Footer Bottom Metadata -->
+        <div class="credits-footer-strip">
+          <span>SALMA EL HADIDY © 2026 // CAIRO, EGYPT</span>
+          <a href="#opening" class="replay-opening-btn">
+            <span>[ REPLAY OPENING REEL ]</span>
+            <span aria-hidden="true">↑</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       LIGHTBOX & MEDIA ZOOM MODAL
+       ======================================================================== -->
+  <div id="lightboxModal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Media Inspector">
+    <div class="lightbox-header">
+      <button id="lightboxCloseBtn" class="lightbox-close-btn" aria-label="Close Lightbox">[ ESC // CLOSE ]</button>
+    </div>
+
+    <div class="lightbox-stage">
+      <button id="lightboxPrevBtn" class="lightbox-nav-btn lightbox-prev-btn" aria-label="Previous image">‹</button>
+      <div class="lightbox-media-container">
+        <img id="lightboxImage" class="lightbox-image" src="" alt="Expanded View">
+      </div>
+      <button id="lightboxNextBtn" class="lightbox-nav-btn lightbox-next-btn" aria-label="Next image">›</button>
+    </div>
+
+    <div class="lightbox-footer">
+      <div id="lightboxCaption" class="lightbox-caption"></div>
+      <div id="lightboxCounter" class="lightbox-counter">01 / 07</div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       TOAST AUDIO NOTIFICATION CAPSULE
+       ======================================================================== -->
+  <div id="audioToast" class="audio-toast" role="status" aria-live="polite">
+    <span aria-hidden="true">🎬</span>
+    <span id="audioToastText">Audio Activated</span>
+  </div>
+
+  <!-- Standalone Application Logic (Zero CORS restrictions on file:// or web) -->
+  <script src="js/bundle.js"></script>
+</body>
+</html>

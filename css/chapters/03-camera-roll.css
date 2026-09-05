@@ -1,0 +1,188 @@
+/* ==========================================================================
+   CHAPTER 03 — SALMA'S CAMERA ROLL (PERSONAL VISUAL ARCHIVE)
+   ========================================================================== */
+
+.chapter-cameraroll {
+  background-color: var(--color-offwhite);
+  color: var(--color-charcoal);
+  position: relative;
+  overflow: hidden;
+}
+
+.cameraroll-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+}
+
+.cameraroll-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(28, 25, 23, 0.15);
+  padding-bottom: 1rem;
+}
+
+.cameraroll-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 6vw, 5.2rem);
+  font-weight: 400;
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: #1C1917;
+}
+
+.cameraroll-title em {
+  font-style: italic;
+  font-family: 'Instrument Serif', Georgia, serif;
+  color: var(--color-burgundy);
+}
+
+.cameraroll-desc {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  color: #66605B;
+  max-width: 52ch;
+  line-height: 1.6;
+}
+
+/* Contact-Sheet Style Filter / Metadata Bar */
+.cameraroll-film-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 1rem;
+  background: var(--color-cream);
+  border: 1px solid rgba(28, 25, 23, 0.1);
+  border-radius: var(--radius-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: #66605B;
+  margin-bottom: 3.5rem;
+}
+
+.film-sprocket-marks {
+  display: flex;
+  gap: 6px;
+}
+
+.sprocket-hole {
+  width: 8px;
+  height: 12px;
+  border-radius: 2px;
+  background: rgba(28, 25, 23, 0.2);
+}
+
+/* Art-Directed Asymmetrical Camera Roll Archive Grid */
+.cameraroll-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.75rem);
+  align-items: center;
+}
+
+/* Individual Archive Items with Uneven Scales & Positions */
+.archive-item {
+  position: relative;
+  cursor: pointer;
+  transition: transform var(--duration-fast) var(--ease-smooth);
+}
+
+.archive-item:hover {
+  transform: translateY(-4px);
+  z-index: 5;
+}
+
+.archive-photo-frame {
+  position: relative;
+  background: #EAE4D9;
+  border: 6px solid #FFFFFF;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-subtle);
+  overflow: hidden;
+}
+
+.archive-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease-cinematic);
+}
+
+.archive-item:hover .archive-photo-frame img {
+  transform: scale(1.04);
+}
+
+/* Metadata Overlays (Frame numbers, locations, dates) */
+.archive-frame-num {
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.65);
+  padding: 0.15rem 0.45rem;
+  border-radius: 2px;
+  backdrop-filter: blur(4px);
+  z-index: 2;
+}
+
+.archive-caption-row {
+  margin-top: 0.55rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+}
+
+.archive-caption-date {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  color: #8E8881;
+  text-align: right;
+}
+
+/* Asymmetrical Spans for Art-Directed Rhythm */
+.span-wide-7 { grid-column: span 12; }
+.span-portrait-5 { grid-column: span 12; }
+.span-square-4 { grid-column: span 12; }
+.span-tall-4 { grid-column: span 12; }
+.span-cinematic-8 { grid-column: span 12; }
+.span-macro-4 { grid-column: span 12; }
+
+@media (min-width: 768px) {
+  .span-wide-7 { grid-column: span 7; }
+  .span-portrait-5 { grid-column: span 5; }
+  .span-square-4 { grid-column: span 4; }
+  .span-tall-4 { grid-column: span 4; }
+  .span-cinematic-8 { grid-column: span 8; }
+  .span-macro-4 { grid-column: span 4; }
+}
+
+.aspect-portrait { aspect-ratio: 3/4; }
+.aspect-landscape { aspect-ratio: 16/10; }
+.aspect-square { aspect-ratio: 1/1; }
+.aspect-cinematic { aspect-ratio: 2.35/1; }
+
+/* Occasional Hand-Written Tape / Contact Strip Details */
+.archive-tape-tag {
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  background: rgba(246, 237, 208, 0.9);
+  padding: 0.2rem 0.8rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  color: #4A121A;
+  transform: rotate(2deg);
+  z-index: 3;
+}

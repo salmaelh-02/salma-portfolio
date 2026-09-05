@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mb02Grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8ECE7"/>
+      <stop offset="60%" stop-color="#6F8874"/>
+      <stop offset="100%" stop-color="#143528"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="url(#mb02Grad)"/>
+  
+  <text x="50" y="80" fill="#143528" font-family="'Space Grotesk', monospace" font-size="14" letter-spacing="2">MEDIA BUYING // ARCHITECTURE 02</text>
+  <text x="50" y="920" fill="#FAF8F5" font-family="'Instrument Serif', serif" font-style="italic" font-size="32">Modernist Textures &amp; Shadows</text>
+
+  <rect x="150" y="460" width="500" height="60" rx="3" fill="rgba(20, 53, 40, 0.85)"/>
+  <text x="400" y="497" fill="#FAF8F5" font-family="'Space Grotesk', monospace" font-size="14" letter-spacing="1.5" text-anchor="middle">
+    [ /assets/work/joes/mb-02.jpg ]
+  </text>
+</svg>

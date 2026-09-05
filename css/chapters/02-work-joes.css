@@ -1,0 +1,398 @@
+/* ==========================================================================
+   CHAPTER 02 — SELECTED WORK (JOE'S VENTURE CASE STUDY)
+   ========================================================================== */
+
+.chapter-work {
+  background-color: var(--color-butter);
+  color: var(--color-emerald-deep);
+  position: relative;
+}
+
+.case-study-hero {
+  border-bottom: 1px solid rgba(20, 53, 40, 0.15);
+  padding-bottom: clamp(3rem, 6vh, 5rem);
+  margin-bottom: clamp(3rem, 6vh, 5rem);
+}
+
+.case-study-meta-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.case-study-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.case-study-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  color: var(--color-emerald);
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.case-study-client {
+  font-family: 'Montserrat', 'Space Grotesk', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  font-size: clamp(2.4rem, 5.8vw, 4.5rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #143528;
+}
+
+.case-study-role-card {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(20, 53, 40, 0.18);
+  padding: 1.25rem 1.75rem;
+  border-radius: var(--radius-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.case-study-role-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  color: #375647;
+  text-transform: uppercase;
+}
+
+.case-study-role-title {
+  font-family: var(--font-editorial-sans);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #143528;
+}
+
+/* 1. CREATIVE DIRECTION (HERO IMAGE & WEEKLY SHOOTS) */
+.work-sub-section {
+  margin-bottom: clamp(4rem, 8vh, 7rem);
+}
+
+.work-sub-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+.work-sub-index {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--color-emerald);
+}
+
+.work-sub-title {
+  font-family: var(--font-editorial-sans);
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #143528;
+}
+
+.work-hero-media-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1280 / 424;
+  max-height: 72vh;
+  border-radius: var(--radius-subtle);
+  overflow: hidden;
+  background: #143528;
+  box-shadow: 0 20px 45px rgba(20, 53, 40, 0.12);
+}
+
+.work-hero-media-wrapper img,
+.work-hero-media-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s var(--ease-cinematic);
+}
+
+.work-hero-media-wrapper:hover img {
+  transform: scale(1.025);
+}
+
+.work-hero-caption-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.85rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #4A6354;
+}
+
+/* 2. MEDIA BUYING CREATIVE ("Sell the world around the product") */
+.work-mediabuying-statement {
+  background: #143528;
+  color: #F6EDD0;
+  padding: clamp(2.5rem, 5vw, 4.5rem);
+  border-radius: var(--radius-subtle);
+  margin-bottom: 2.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-mediabuying-quote {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4.5vw, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.work-mediabuying-quote em {
+  font-style: italic;
+  color: #F8D8DC;
+}
+
+.work-mediabuying-explanation {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: 1.65;
+  color: rgba(246, 237, 208, 0.85);
+  max-width: 60ch;
+}
+
+.work-mediabuying-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .work-mediabuying-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .work-mediabuying-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .work-media-card.span-col-3 { grid-column: span 3; }
+  .work-media-card.span-col-2 { grid-column: span 2; }
+}
+
+.work-media-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-subtle);
+  background: #E5DCBF;
+  aspect-ratio: 4/5;
+  cursor: pointer;
+}
+
+.work-media-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s var(--ease-cinematic);
+}
+
+.work-media-card:hover img {
+  transform: scale(1.04);
+}
+
+.work-media-card-label {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: rgba(20, 53, 40, 0.85);
+  backdrop-filter: blur(8px);
+  color: #FAF8F5;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-subtle);
+}
+
+/* 3. SOCIAL & CONTENT ASYMMETRICAL EDITORIAL GRID */
+.work-social-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .work-social-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.work-social-card {
+  position: relative;
+  background: #E5DCBF;
+  border-radius: var(--radius-subtle);
+  overflow: hidden;
+  aspect-ratio: 9/16;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(20, 53, 40, 0.06);
+}
+
+.work-social-card.offset-card {
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .work-social-card.offset-card {
+    transform: translateY(2.5rem);
+  }
+}
+
+.work-social-card img,
+.work-social-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s var(--ease-cinematic);
+}
+
+.work-social-card:hover img,
+.work-social-card:hover video {
+  transform: scale(1.05);
+}
+
+.work-social-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 53, 40, 0.8) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.25rem;
+  color: #FAF8F5;
+  opacity: 0;
+  transition: opacity var(--duration-normal) ease;
+}
+
+.work-social-card:hover .work-social-overlay {
+  opacity: 1;
+}
+
+/* 4. BEHIND THE SCENES / SHOOT CHAOS MODULE */
+.work-bts-box {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(20, 53, 40, 0.2);
+  border-radius: var(--radius-subtle);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+@media (min-width: 900px) {
+  .work-bts-box {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+  }
+}
+
+.work-bts-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.work-bts-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: -0.02em;
+  color: #143528;
+}
+
+.work-bts-title em {
+  font-style: italic;
+}
+
+.work-bts-copy {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: #375647;
+}
+
+.work-bts-audio-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0.65rem 1.15rem;
+  background: #143528;
+  color: #FAF8F5;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  transition: all var(--duration-fast) ease;
+}
+
+.work-bts-audio-cta:hover {
+  background: #0D231A;
+  transform: translateY(-2px);
+}
+
+.work-bts-media-preview {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: var(--radius-subtle);
+  overflow: hidden;
+  background: #E5DCBF;
+  cursor: pointer;
+}
+
+.work-bts-media-preview img,
+.work-bts-media-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Universal Floating Video Hover Play Badge */
+.video-play-badge {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: rgba(18, 15, 14, 0.78);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  color: #FAF8F5;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-indent: 3px;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 10;
+  transition: opacity 0.28s var(--ease-smooth), transform 0.28s var(--ease-cinematic);
+}
+
+.work-hero-media-wrapper:hover .video-play-badge,
+.work-social-card:hover .video-play-badge,
+.work-bts-media-preview:hover .video-play-badge,
+.bts-media-viewport:hover .video-play-badge {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="100%" height="100%">
+  <defs>
+    <linearGradient id="btsGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FAF8F5"/>
+      <stop offset="50%" stop-color="#E2D2B0"/>
+      <stop offset="100%" stop-color="#213E30"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#btsGrad)"/>
+  
+  <text x="60" y="70" fill="#143528" font-family="'Space Grotesk', monospace" font-size="16" letter-spacing="2">BTS // SHOOT CHAOS CLIP 01</text>
+  <text x="60" y="600" fill="#FAF8F5" font-family="'Instrument Serif', serif" font-style="italic" font-size="34">Natural Team Moments &amp; Unfiltered Energy</text>
+
+  <rect x="350" y="300" width="500" height="70" rx="3" fill="rgba(20, 53, 40, 0.85)"/>
+  <text x="600" y="342" fill="#FAF8F5" font-family="'Space Grotesk', monospace" font-size="15" letter-spacing="1.5" text-anchor="middle">
+    [ /assets/work/joes/bts-01.mp4 ]
+  </text>
+</svg>

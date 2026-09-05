@@ -1,0 +1,19 @@
+{
+  "name": "salma-elhadidy-portfolio",
+  "version": "1.0.0",
+  "description": "Cinematic and editorial Creative Director portfolio for Salma El Hadidy.",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx serve . -l 3000",
+    "start": "npx serve . -l 3000"
+  },
+  "keywords": [
+    "creative-director",
+    "fashion-portfolio",
+    "editorial-design",
+    "cinematic-portfolio",
+    "salma-elhadidy"
+  ],
+  "author": "Salma El Hadidy",
+  "license": "MIT"
+}

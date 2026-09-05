@@ -1,0 +1,117 @@
+/* ==========================================================================
+   MODERN CSS RESET & BASE STYLES
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-current);
+  color: var(--text-current);
+  font-family: var(--font-body);
+  font-size: var(--text-body-md);
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+  transition: background-color var(--duration-slow) var(--ease-cinematic),
+              color var(--duration-slow) var(--ease-cinematic);
+}
+
+/* Custom Scrollbar - Minimal & Editorial */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-current);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-current);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-current);
+}
+
+img, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+input, textarea, select {
+  font: inherit;
+}
+
+::selection {
+  background-color: var(--color-burgundy);
+  color: var(--color-butter-light);
+}
+
+/* Film Grain Canvas Layer */
+.film-grain-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: var(--z-film-grain);
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+}
+
+/* Main Site Container Wrapper */
+.site-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-pad);
+  padding-right: var(--container-pad);
+}
+
+/* Visual Chapter Section Base */
+.chapter-section {
+  position: relative;
+  padding-top: clamp(4rem, 10vh, 8rem);
+  padding-bottom: clamp(5rem, 12vh, 10rem);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid var(--border-current);
+  transition: border-color var(--duration-slow) var(--ease-cinematic);
+}
