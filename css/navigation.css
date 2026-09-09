@@ -345,7 +345,7 @@
 
 .treatment-chapter-link {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 1.5rem;
   color: #FAF8F5;
   text-decoration: none;

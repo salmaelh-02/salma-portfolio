@@ -126,37 +126,37 @@
       <a href="#opening" class="treatment-chapter-link">
         <span class="treatment-chapter-num">00</span>
         <span class="treatment-chapter-name">OPENING REEL</span>
-        <span class="treatment-chapter-desc">Cinematic sequence &amp; initial titles</span>
+        <span class="treatment-chapter-desc">The opening scene</span>
       </a>
       <a href="#about" class="treatment-chapter-link">
         <span class="treatment-chapter-num">01</span>
         <span class="treatment-chapter-name">ABOUT SALMA</span>
-        <span class="treatment-chapter-desc">Profile, trilingual fluency &amp; CV</span>
+        <span class="treatment-chapter-desc">Who’s behind all this</span>
       </a>
       <a href="#work" class="treatment-chapter-link">
         <span class="treatment-chapter-num">02</span>
         <span class="treatment-chapter-name">SELECTED WORK</span>
-        <span class="treatment-chapter-desc">Joe's Venture campaign ecosystem</span>
+        <span class="treatment-chapter-desc">The Joe’s Venture chapter</span>
       </a>
       <a href="#camera-roll" class="treatment-chapter-link">
         <span class="treatment-chapter-num">03</span>
         <span class="treatment-chapter-name">CAMERA ROLL</span>
-        <span class="treatment-chapter-desc">Personal observational visual archive</span>
+        <span class="treatment-chapter-desc">Things that caught my eye</span>
       </a>
       <a href="#direction" class="treatment-chapter-link">
         <span class="treatment-chapter-num">04</span>
         <span class="treatment-chapter-name">DIRECTION</span>
-        <span class="treatment-chapter-desc">Creative point of view &amp; visual philosophy</span>
+        <span class="treatment-chapter-desc">How I see things</span>
       </a>
       <a href="#credits" class="treatment-chapter-link">
         <span class="treatment-chapter-num">05</span>
         <span class="treatment-chapter-name">GET IN TOUCH</span>
-        <span class="treatment-chapter-desc">Contact &amp; collaboration dispatches</span>
+        <span class="treatment-chapter-desc">Let's Make Something</span>
       </a>
     </div>
 
     <div class="treatment-nav-footer">
-      <span>CAIRO, EGYPT — 30.0444° N, 31.2357° E</span>
+      <span>CAIRO, EGYPT</span>
       <span>SALMA EL HADIDY © 2026</span>
     </div>
   </div>
@@ -187,8 +187,12 @@
           <span>LOC: CAIRO, EG</span>
           <button id="aspectRatioBtn" class="aspect-toggle-btn" aria-label="Toggle Anamorphic CinemaScope Aspect">ASPECT: 16:9</button>
           <a href="assets/about/salma-cv.pdf" download="Salma_El_Hadidy_CV.pdf" target="_blank" rel="noopener noreferrer" class="opening-cv-btn" aria-label="Download Salma El Hadidy CV">
-            <span>DOWNLOADABLE CV</span>
-            <span aria-hidden="true">↓</span>
+            <span>CV</span>
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left: 2px;">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
           </a>
         </div>
       </div>
@@ -218,7 +222,7 @@
           <!-- Left Column: Portrait Frame -->
           <div class="about-visual-column">
             <div class="about-portrait-frame" data-lightbox-src="assets/about/salma-portrait.jpg" data-lightbox-caption="Salma El Hadidy — Creative Director on Set, Cairo">
-              <img src="assets/about/salma-portrait.jpg" alt="Salma El Hadidy — Creative Director on Set" loading="lazy">
+              <img src="assets/about/salma-portrait.jpg" alt="Salma El Hadidy — Creative Director on Set" loading="eager">
             </div>
           </div>
 
@@ -308,19 +312,29 @@
         
         <!-- Case Study Header -->
         <div class="case-study-hero">
-          <div class="case-study-meta-header">
-            <div class="case-study-title-group">
-              <span class="case-study-badge">02 — FROM THE INSIDE</span>
-              <h2 class="case-study-client">JOE’S VENTURE</h2>
+          <div class="case-study-hero-grid">
+            <div class="case-study-hero-content">
+              <div class="case-study-meta-header">
+                <div class="case-study-title-group">
+                  <span class="case-study-badge">02 — FROM THE INSIDE</span>
+                  <h2 class="case-study-client">JOE’S VENTURE</h2>
+                </div>
+                <div class="case-study-role-card">
+                  <span class="case-study-role-label">ROLE / RESPONSIBILITY</span>
+                  <span class="case-study-role-title">Digital Marketing Project Manager &amp; Creative Direction</span>
+                </div>
+              </div>
+              <p class="lead-paragraph">
+                Leading weekly shoots and shaping how the brand looks and feels, turning everyday products into stories, scenes, and ideas with personality.
+              </p>
             </div>
-            <div class="case-study-role-card">
-              <span class="case-study-role-label">ROLE / RESPONSIBILITY</span>
-              <span class="case-study-role-title">Digital Marketing Project Manager &amp; Creative Direction</span>
+
+            <div class="case-study-hero-media" data-lightbox-src="assets/work/joes/leather-hides.jpg" data-lightbox-caption="Joe's Venture — Raw Leather Tannery Hides &amp; Workshop Color Palette">
+              <img src="assets/work/joes/leather-hides.jpg" 
+                   alt="Joe's Venture Raw Leather Hides in Workshop" 
+                   loading="eager">
             </div>
           </div>
-          <p class="lead-paragraph">
-            Leading weekly shoots and shaping how the brand looks and feels, turning everyday products into stories, scenes, and ideas with personality.
-          </p>
         </div>
 
         <!-- Section 1: Creative Direction (Weekly Shoots) -->
@@ -349,49 +363,56 @@
             <div class="work-media-card span-col-3" data-lightbox-src="assets/work/joes/mb-01.jpg" data-lightbox-meta="[mb-01]">
               <img src="assets/work/joes/mb-01.jpg" 
                    alt="Joe's Venture Handcrafted Leather Bag & Artisan Books" 
-                   loading="lazy">
+                   loading="eager">
             </div>
 
-            <!-- Card 02 -->
-            <div class="work-media-card span-col-3" data-lightbox-src="assets/work/joes/mb-02.jpg" data-lightbox-meta="[mb-02]">
-              <img src="assets/work/joes/mb-02.jpg" 
-                   alt="Joe's Venture Midnight Blue Leather Sleeve & Sculptural Folds" 
-                   loading="lazy">
+            <!-- Card 08 (Jacket Frame) -->
+            <div class="work-media-card span-col-3" data-lightbox-src="assets/work/joes/mb-08.jpg" data-lightbox-meta="[mb-08]">
+              <img src="assets/work/joes/mb-08.jpg" 
+                   alt="Joe's Venture Black Biker Leather Jacket on Studio Mannequin" 
+                   loading="eager">
             </div>
 
             <!-- Card 03 -->
             <div class="work-media-card span-col-2" data-lightbox-src="assets/work/joes/mb-03.jpg" data-lightbox-meta="[mb-03]">
               <img src="assets/work/joes/mb-03.jpg" 
                    alt="Joe's Venture Cognac Leather Portfolio Envelope on Black Grain" 
-                   loading="lazy">
+                   loading="eager">
             </div>
 
             <!-- Card 04 -->
             <div class="work-media-card span-col-2" data-lightbox-src="assets/work/joes/mb-04.jpg" data-lightbox-meta="[mb-04]">
               <img src="assets/work/joes/mb-04.jpg" 
                    alt="Joe's Venture Pebbled Leather Crossbody Bags in Sunlight" 
-                   loading="lazy">
+                   loading="eager">
             </div>
 
             <!-- Card 05 -->
             <div class="work-media-card span-col-2" data-lightbox-src="assets/work/joes/mb-05.jpg" data-lightbox-meta="[mb-05]">
               <img src="assets/work/joes/mb-05.jpg" 
                    alt="Joe's Venture Caramel Leather Briefcase on Raw Workshop Rolls" 
-                   loading="lazy">
+                   loading="eager">
             </div>
 
-            <!-- Card 06 (Vertical Frame) -->
-            <div class="work-media-card span-col-3" data-lightbox-src="assets/work/joes/mb-06.jpg" data-lightbox-meta="[mb-06]">
+            <!-- Card 06 -->
+            <div class="work-media-card span-col-2" data-lightbox-src="assets/work/joes/mb-06.jpg" data-lightbox-meta="[mb-06]">
               <img src="assets/work/joes/mb-06.jpg" 
                    alt="Joe's Venture Shadowed Leather Briefcase on Warm Distressed Leather Rolls" 
-                   loading="lazy">
+                   loading="eager">
             </div>
 
-            <!-- Card 07 (Vertical Frame) -->
-            <div class="work-media-card span-col-3" data-lightbox-src="assets/work/joes/mb-07.jpg" data-lightbox-meta="[mb-07]">
+            <!-- Card 02 (Blue Sunglasses Sleeve) -->
+            <div class="work-media-card span-col-2" data-lightbox-src="assets/work/joes/mb-02.jpg" data-lightbox-meta="[mb-02]">
+              <img src="assets/work/joes/mb-02.jpg" 
+                   alt="Joe's Venture Midnight Blue Leather Sleeve & Sculptural Folds" 
+                   loading="eager">
+            </div>
+
+            <!-- Card 07 -->
+            <div class="work-media-card span-col-2" data-lightbox-src="assets/work/joes/mb-07.jpg" data-lightbox-meta="[mb-07]">
               <img src="assets/work/joes/mb-07.jpg" 
                    alt="Joe's Venture Cognac Leather Wristlet on Branded Packaging Boxes" 
-                   loading="lazy">
+                   loading="eager">
             </div>
           </div>
         </div>
@@ -415,6 +436,21 @@
 
             <div class="work-social-card" data-lightbox-src="assets/work/joes/social-03.mp4" data-lightbox-meta="[social 03]">
               <video src="assets/work/joes/social-03.mp4" autoplay loop muted playsinline></video>
+              <div class="video-play-badge" aria-hidden="true">▶</div>
+            </div>
+
+            <div class="work-social-card" data-lightbox-src="assets/work/joes/social-04.mp4" data-lightbox-meta="[social 04]">
+              <video src="assets/work/joes/social-04.mp4" autoplay loop muted playsinline></video>
+              <div class="video-play-badge" aria-hidden="true">▶</div>
+            </div>
+
+            <div class="work-social-card offset-card" data-lightbox-src="assets/work/joes/social-05.mp4" data-lightbox-meta="[social 05]">
+              <video src="assets/work/joes/social-05.mp4" autoplay loop muted playsinline></video>
+              <div class="video-play-badge" aria-hidden="true">▶</div>
+            </div>
+
+            <div class="work-social-card" data-lightbox-src="assets/work/joes/social-06.mp4" data-lightbox-meta="[social 06]">
+              <video src="assets/work/joes/social-06.mp4" autoplay loop muted playsinline></video>
               <div class="video-play-badge" aria-hidden="true">▶</div>
             </div>
           </div>
@@ -455,7 +491,7 @@
           </h2>
 
           <p class="cameraroll-desc">
-            I collect the things I want to remember, people caught in moments, places I love, pets, and little details that somehow stay with me.
+            I collect the things I want to remember, people caught in moments, places I love, and little details that somehow stay with me.
           </p>
         </div>
 
@@ -465,7 +501,7 @@
           <!-- Photo 01 -->
           <div class="archive-item span-wide-7" data-lightbox-src="assets/camera-roll/roll-01.jpg" data-lightbox-meta="FRAME #04A">
             <div class="archive-photo-frame aspect-landscape">
-              <img src="assets/camera-roll/roll-01.jpg" alt="Camera Roll 01" loading="lazy">
+              <img src="assets/camera-roll/roll-01.jpg" alt="Camera Roll 01" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">EGYPT</span>
@@ -475,8 +511,7 @@
           <!-- Photo 02 -->
           <div class="archive-item span-portrait-5" data-lightbox-src="assets/camera-roll/roll-02.jpg" data-lightbox-meta="FRAME #11B">
             <div class="archive-photo-frame aspect-landscape">
-              <div class="archive-tape-tag">STUDY</div>
-              <img src="assets/camera-roll/roll-02.jpg" alt="Camera Roll 02" loading="lazy">
+              <img src="assets/camera-roll/roll-02.jpg" alt="Camera Roll 02" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">MAURITIUS</span>
@@ -486,7 +521,7 @@
           <!-- Photo 03 -->
           <div class="archive-item span-square-4" data-lightbox-src="assets/camera-roll/roll-03.jpg" data-lightbox-meta="FRAME #19A">
             <div class="archive-photo-frame aspect-portrait">
-              <img src="assets/camera-roll/roll-03.jpg" alt="Camera Roll 03" loading="lazy">
+              <img src="assets/camera-roll/roll-03.jpg" alt="Camera Roll 03" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">MAURITIUS</span>
@@ -496,7 +531,7 @@
           <!-- Photo 04 -->
           <div class="archive-item span-tall-4" data-lightbox-src="assets/camera-roll/roll-04.jpg" data-lightbox-meta="FRAME #22C">
             <div class="archive-photo-frame aspect-portrait">
-              <img src="assets/camera-roll/roll-04.jpg" alt="Camera Roll 04" loading="lazy">
+              <img src="assets/camera-roll/roll-04.jpg" alt="Camera Roll 04" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">MAURITIUS</span>
@@ -506,7 +541,7 @@
           <!-- Photo 05 -->
           <div class="archive-item span-square-4" data-lightbox-src="assets/camera-roll/roll-05.jpg" data-lightbox-meta="FRAME #35A">
             <div class="archive-photo-frame aspect-landscape">
-              <img src="assets/camera-roll/roll-05.jpg" alt="Camera Roll 05" loading="lazy">
+              <img src="assets/camera-roll/roll-05.jpg" alt="Camera Roll 05" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">EGYPT</span>
@@ -516,7 +551,7 @@
           <!-- Photo 06 -->
           <div class="archive-item span-cinematic-8" data-lightbox-src="assets/camera-roll/roll-06.jpg" data-lightbox-meta="FRAME #40B">
             <div class="archive-photo-frame aspect-landscape">
-              <img src="assets/camera-roll/roll-06.jpg" alt="Camera Roll 06" loading="lazy">
+              <img src="assets/camera-roll/roll-06.jpg" alt="Camera Roll 06" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">EGYPT</span>
@@ -526,7 +561,7 @@
           <!-- Photo 07 -->
           <div class="archive-item span-tall-4" data-lightbox-src="assets/camera-roll/roll-10.jpg" data-lightbox-meta="FRAME #48A">
             <div class="archive-photo-frame aspect-portrait">
-              <img src="assets/camera-roll/roll-10.jpg" alt="Camera Roll 07" loading="lazy">
+              <img src="assets/camera-roll/roll-10.jpg" alt="Camera Roll 07" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">MAURITIUS</span>
@@ -536,7 +571,7 @@
           <!-- Photo 08 -->
           <div class="archive-item span-portrait-5" data-lightbox-src="assets/camera-roll/roll-07.jpg" data-lightbox-meta="FRAME #54A">
             <div class="archive-photo-frame aspect-landscape">
-              <img src="assets/camera-roll/roll-07.jpg" alt="Camera Roll 08" loading="lazy">
+              <img src="assets/camera-roll/roll-07.jpg" alt="Camera Roll 08" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">EGYPT</span>
@@ -546,7 +581,7 @@
           <!-- Photo 09 -->
           <div class="archive-item span-wide-7" data-lightbox-src="assets/camera-roll/roll-08.jpg" data-lightbox-meta="FRAME #62A">
             <div class="archive-photo-frame aspect-landscape">
-              <img src="assets/camera-roll/roll-08.jpg" alt="Camera Roll 09" loading="lazy">
+              <img src="assets/camera-roll/roll-08.jpg" alt="Camera Roll 09" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">MAURITIUS</span>
@@ -556,7 +591,7 @@
           <!-- Photo 10 -->
           <div class="archive-item span-portrait-5" data-lightbox-src="assets/camera-roll/roll-09.jpg" data-lightbox-meta="FRAME #70A">
             <div class="archive-photo-frame aspect-portrait">
-              <img src="assets/camera-roll/roll-09.jpg" alt="Camera Roll 10" loading="lazy">
+              <img src="assets/camera-roll/roll-09.jpg" alt="Camera Roll 10" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">FRANCE</span>
@@ -566,7 +601,7 @@
           <!-- Photo 11 -->
           <div class="archive-item span-wide-7" data-lightbox-src="assets/camera-roll/roll-11.jpg" data-lightbox-meta="FRAME #78A">
             <div class="archive-photo-frame aspect-landscape">
-              <img src="assets/camera-roll/roll-11.jpg" alt="Camera Roll 11" loading="lazy">
+              <img src="assets/camera-roll/roll-11.jpg" alt="Camera Roll 11" loading="eager">
             </div>
             <div class="archive-caption-row">
               <span class="archive-caption-date">EGYPT</span>
@@ -625,10 +660,10 @@
             <div class="direction-image-frame" data-lightbox-src="assets/direction/direction-manifesto.jpg" data-lightbox-caption="AUC Film Directing &amp; Set Study — Cinema Camera, Atmosphere &amp; Character World">
               <img src="assets/direction/direction-manifesto.jpg" 
                    alt="AUC Film Directing Set Study — Cinema Camera &amp; Hooded Character" 
-                   loading="lazy">
+                   loading="eager">
             </div>
             <div class="direction-annotation-badge">
-              <span class="handwritten-note">“If it feels like a template, burn it and start with the feeling.”</span>
+              <span class="handwritten-note">“If it could belong to anyone, it’s not done yet.”</span>
             </div>
           </div>
 
@@ -720,6 +755,9 @@
       <div id="lightboxCounter" class="lightbox-counter">01 / 07</div>
     </div>
   </div>
+
+  <!-- Ambient Audio Soundtrack (Looping track from ScreenRecording) -->
+  <audio id="ambientAudio" src="assets/audio/ambient.m4a" loop preload="auto" playsinline></audio>
 
   <!-- ========================================================================
        TOAST AUDIO NOTIFICATION CAPSULE

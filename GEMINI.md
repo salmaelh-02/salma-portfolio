@@ -46,6 +46,12 @@ When a user mentions any placeholder below, map it to the corresponding asset pa
   - Target Path: `/assets/work/joes/social-02.jpg`
 - **`[social 03]`** / **`[reel 03]`**:
   - Target Path: `/assets/work/joes/reel-02.mp4` or `/assets/work/joes/social-03.jpg`
+- **`[social 04]`** / **`[reel 04]`**:
+  - Target Path: `/assets/work/joes/social-04.mp4` or `/assets/work/joes/social-04.jpg`
+- **`[social 05]`** / **`[reel 05]`**:
+  - Target Path: `/assets/work/joes/social-05.mp4` or `/assets/work/joes/social-05.jpg`
+- **`[social 06]`** / **`[reel 06]`**:
+  - Target Path: `/assets/work/joes/social-06.mp4` or `/assets/work/joes/social-06.jpg`
 - **`[joes bts]`**:
   - Target Path: `/assets/work/joes/bts-01.mp4` or `/assets/work/joes/bts-01.jpg`
 

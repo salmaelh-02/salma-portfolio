@@ -9,9 +9,12 @@
 export class AudioController {
   constructor() {
     this.audioCtx = null;
-    this.ambientGain = null;
-    this.ambientOsc = null;
     this.isAmbientPlaying = false;
+    this.ambientAudio = document.getElementById('ambientAudio') || new Audio('assets/audio/ambient.m4a');
+    if (this.ambientAudio) {
+      this.ambientAudio.loop = true;
+    }
+    this.fadeInterval = null;
     this.activeClip = null;
 
     this.toggleBtn = document.getElementById('globalAudioToggle');
@@ -36,73 +39,65 @@ export class AudioController {
   }
 
   toggleAmbient() {
-    this.ensureContext();
-    if (!this.audioCtx) return;
-
     if (this.isAmbientPlaying) {
       this.stopAmbient();
-      this.showToast("Ambient sound paused");
     } else {
       this.startAmbient();
-      this.showToast("35mm Film Projector Ambient: Playing");
     }
   }
 
   startAmbient() {
-    try {
-      // Synthesize a warm, vintage 35mm projector hum & tape warmth
-      const osc = this.audioCtx.createOscillator();
-      const gain = this.audioCtx.createGain();
-      const filter = this.audioCtx.createBiquadFilter();
+    if (!this.ambientAudio) return;
 
-      // Low warm drone
-      osc.type = 'triangle';
-      osc.frequency.setValueAtTime(65, this.audioCtx.currentTime); // Low warm 65Hz hum
-
-      // Low pass filter for soft analog warmth
-      filter.type = 'lowpass';
-      filter.frequency.setValueAtTime(280, this.audioCtx.currentTime);
-
-      gain.gain.setValueAtTime(0.001, this.audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.08, this.audioCtx.currentTime + 1.2);
-
-      osc.connect(filter);
-      filter.connect(gain);
-      gain.connect(this.audioCtx.destination);
-
-      osc.start();
-      this.ambientOsc = osc;
-      this.ambientGain = gain;
+    clearInterval(this.fadeInterval);
+    this.ambientAudio.volume = 0;
+    this.ambientAudio.play().then(() => {
       this.isAmbientPlaying = true;
+      let vol = 0;
+      this.fadeInterval = setInterval(() => {
+        vol += 0.08;
+        if (vol >= 0.85) {
+          this.ambientAudio.volume = 0.85;
+          clearInterval(this.fadeInterval);
+        } else {
+          this.ambientAudio.volume = vol;
+        }
+      }, 40);
 
       if (this.toggleBtn) {
         this.toggleBtn.classList.add('is-playing');
         const textSpan = this.toggleBtn.querySelector('.audio-toggle-text');
         if (textSpan) textSpan.textContent = 'SOUND: ON';
       }
-    } catch (e) {
-      console.warn("Audio initialization notice:", e);
-    }
+      this.showToast("Ambient Soundtrack: Playing");
+    }).catch((e) => {
+      console.warn("Audio playback notice:", e);
+    });
   }
 
   stopAmbient() {
-    if (this.ambientGain && this.audioCtx) {
-      this.ambientGain.gain.exponentialRampToValueAtTime(0.0001, this.audioCtx.currentTime + 0.5);
-      setTimeout(() => {
-        if (this.ambientOsc) {
-          this.ambientOsc.stop();
-          this.ambientOsc.disconnect();
-          this.ambientOsc = null;
-        }
-      }, 500);
-    }
-    this.isAmbientPlaying = false;
+    if (!this.ambientAudio) return;
 
+    clearInterval(this.fadeInterval);
+    let vol = this.ambientAudio.volume;
+    this.fadeInterval = setInterval(() => {
+      vol -= 0.1;
+      if (vol <= 0.05) {
+        this.ambientAudio.volume = 0;
+        this.ambientAudio.pause();
+        clearInterval(this.fadeInterval);
+      } else {
+        this.ambientAudio.volume = vol;
+      }
+    }, 40);
+
+    this.isAmbientPlaying = false;
     if (this.toggleBtn) {
       this.toggleBtn.classList.remove('is-playing');
       const textSpan = this.toggleBtn.querySelector('.audio-toggle-text');
       if (textSpan) textSpan.textContent = 'SOUND: OFF';
     }
+    this.showToast("Ambient Soundtrack: Paused");
   }
 
   playBtsCue(soundType, cardElement) {

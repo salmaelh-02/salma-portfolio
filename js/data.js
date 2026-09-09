@@ -39,7 +39,7 @@ export const siteData = {
       { title: "Composition", desc: "Every detail earns its place." },
       { title: "Pacing", desc: "Knowing when to move, and when to hold." }
     ],
-    annotation: "“If it feels like a template, burn it and start with the feeling.”"
+    annotation: "“If it could belong to anyone, it’s not done yet.”"
   },
 
   caseStudy: {
@@ -58,11 +58,12 @@ export const siteData = {
         tag: "MEDIA BUYING CREATIVE",
         items: [
           { title: "Lifestyle Atmosphere 01", caption: "Artisan Leather, Paintbrushes & Antiquarian Books." },
-          { title: "Architectural Focus 02", caption: "Midnight Blue Leather & Sculptural Folds." },
+          { title: "Biker Silhouette 08", caption: "Black Biker Leather Jacket on Studio Mannequin." },
           { title: "Mood & Light 03", caption: "Cognac Leather Envelope & Midnight Texture Collage." },
           { title: "Craft & Details 04", caption: "Pebbled Leather Texture & Artisan Stitching." },
           { title: "Form & Workshop 05", caption: "Caramel Leather Briefcase on Raw Hide Rolls." },
           { title: "Leather & Structure 06", caption: "Shadowed Leather Briefcase & Warm Hide Foundation." },
+          { title: "Architectural Focus 02", caption: "Midnight Blue Leather & Sculptural Folds." },
           { title: "Identity & Packaging 07", caption: "Cognac Leather Wristlet on Branded Packaging Boxes." }
         ]
       },
@@ -72,7 +73,10 @@ export const siteData = {
         items: [
           { title: "Reel 01 — Jacket ASMR", caption: "Tactile leather grain and sensory texture soundscape" },
           { title: "Grid 02 — Sounds of Joe's", caption: "Tactile workshop rhythms and sensory soundscape" },
-          { title: "Reel 03 — Dynamic Flow", caption: "Directorial framing and dynamic movement sequence" }
+          { title: "Reel 03 — Dynamic Flow", caption: "Directorial framing and dynamic movement sequence" },
+          { title: "Reel 04 — Rhythm & Atmosphere", caption: "Atmospheric pacing and ambient character focus" },
+          { title: "Reel 05 — Tactile Details", caption: "Sensory leather craftsmanship in motion" },
+          { title: "Reel 06 — Street Motion", caption: "Spontaneous Cairo energy and directorial framing" }
         ]
       }
     }
